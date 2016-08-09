@@ -89,6 +89,51 @@ var website = {
 	}, 
 	dropdown: function(m,v){
 		$("#"+m+" .selected span").text(v);
+	},
+	mapSettings: function(map, marker_points){
+		var infoWindow = new google.maps.InfoWindow(), bounds = new google.maps.LatLngBounds(), position, marker;
+		for (i = 0; i < marker_points.length; i++) {
+			position = new google.maps.LatLng(marker_points[i][0], marker_points[i][1]);
+			marker = new google.maps.Marker({
+		    	position: position,
+		    	map: map,
+		    	icon: marker_points[i][3]
+		  	});
+			bounds.extend(position);
+
+	        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+	            return function() {
+	                infoWindow.close();
+	                infoWindow.setContent(marker_points[i][2]);
+	                infoWindow.open(map, marker);
+	            }
+	        })(marker, i));
+	        map.fitBounds(bounds);
+		};
+
+		google.maps.event.addListener(map, 'click', function() {
+		    	infoWindow.close();
+		});
+
+		google.maps.event.addListener(infoWindow, 'domready', function() {
+		    var iwOuter = $('.gm-style-iw');
+			var iwBackground = iwOuter.prev();
+
+		    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+			iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+			iwOuter.parent().parent().css({left: '115px'});
+			iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+			iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+			iwBackground.children(':nth-child(3)').find('div').children().css({'box-shadow': 'rgba(72, 181, 233, 0.6) 0px 1px 6px', 'z-index' : '1'});
+			var iwCloseBtn = iwOuter.next();
+			iwCloseBtn.css({opacity: '1', right: '38px', top: '3px', border: '7px solid #e57373', 'border-radius': '0', 'box-shadow': '0 0 5px #e57373'});
+			if($('.iw-content').height() < 140){
+		      $('.iw-bottom-gradient').css({display: 'none'});
+		    }
+			iwCloseBtn.mouseout(function(){
+				$(this).css({opacity: '1'});
+			});
+		});
 	}
 }
 
