@@ -90,7 +90,13 @@ var website = {
 	dropdown: function(m,v){
 		$("#"+m+" .selected span").text(v);
 	},
-	mapSettings: function(map, marker_points){
+	mapInitialize: function(marker_points){
+		var offsetHeight = $(window).height();
+		$("#map").css("height", offsetHeight+"px"); 
+		var map = new google.maps.Map(document.getElementById("map"), {
+			zoom: 12,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		});
 		var infoWindow = new google.maps.InfoWindow(), bounds = new google.maps.LatLngBounds(), position, marker;
 		for (i = 0; i < marker_points.length; i++) {
 			position = new google.maps.LatLng(marker_points[i][0], marker_points[i][1]);
