@@ -93,6 +93,9 @@ var website = {
 	mapInitialize: function(marker_points){
 		var offsetHeight = $(window).height();
 		$("#map").css("height", offsetHeight+"px"); 
+		$("#map-search").css("height", offsetHeight+"px"); 
+		$("#map-search .map-search-content").css("height", offsetHeight+"px"); 
+
 		var map = new google.maps.Map(document.getElementById("map"), {
 			zoom: 12,
 			mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -140,6 +143,15 @@ var website = {
 				$(this).css({opacity: '1'});
 			});
 		});
+	},
+	showSearch: function(s){
+		if(s=="open"){
+			$("#map-search").animate({'right': '0px'}, 500);
+			$("#map-search .map-search-icon").attr("onclick","website.showSearch('close')").html("<i class=\"fa fa-times\" aria-hidden=\"true\"></i>");
+		}else{
+			$("#map-search").animate({'right': '-270px'}, 500);
+			$("#map-search .map-search-icon").attr("onclick","website.showSearch('open')").html("<i class=\"fa fa-search\" aria-hidden=\"true\"></i>");
+		}
 	}
 }
 

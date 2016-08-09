@@ -1,4 +1,73 @@
+<seclect class="mobile-detected"><b>რუკით ძიებისთვის გთხოვთ გადმოწეროთ მობილურის აპლიკაცია: <a href="" target="_blank">Android</a></b> <br /> <a href="<?=$c::WEBSITE?>">უკან დაბრუნება</a></seclect>
 <section id="map"></section>
+<section id="map-search">
+	<section class="map-search-icon" onclick="website.showSearch('open')"><i class="fa fa-search" aria-hidden="true"></i></section>
+	<section class="map-search-content">
+		<form action="" method="get">
+					<label>კატეგორია: </label>
+					<section class="select-box" id="icat1">
+					<div class="selected">
+						<span>აირჩიეთ</span> <i class="fa fa-arrow-down" aria-hidden="true"></i>
+					</div>
+					<select class="selector" data-selectbox="icat1" data-status="closed">
+						<optgroup label="ავტო"> 
+							<option>BMW</option>
+							<option>BMW</option>
+							<option>BMW</option>
+						</optgroup>
+						<optgroup label="ავტო">
+							<option>უძრავი ქონება</option>
+							<option>უძრავი ქონება</option>
+							<option>უძრავი ქონება</option>
+						</optgroup>
+					</select>
+				</section>
+					<label>საკვანძო სიტყვა: </label>
+					<input type="text" name="search" value="" />
+					
+
+					<label>ფასი:</label>
+					<section class="range">
+						<input type="text" name="" value="" placeholder="დან" />
+						<input type="text" name="" value="" placeholder="მდე" />
+					</section>
+
+					<label>ოპერატიული მეხსიერება:</label>
+					<section class="checkboxes-rounded active r" id="r1" onclick="website.checkboxCheckRounded('r','r1')">
+						<section class="b"><i class="fa fa-check" aria-hidden="true"></i></section>
+						<section class="t">1 გეგაბაიტი</section>
+					</section>
+
+					<section class="checkboxes-rounded r" id="r2" onclick="website.checkboxCheckRounded('r','r2')">
+						<section class="b"><i class="fa fa-check" aria-hidden="true"></i></section>
+						<section class="t">2 გეგაბაიტი</section>
+					</section>
+
+					<section class="checkboxes-rounded r" id="r3" onclick="website.checkboxCheckRounded('r','r3')">
+						<section class="b"><i class="fa fa-check" aria-hidden="true"></i></section>
+						<section class="t">12 გეგაბაიტი</section>
+					</section>
+
+
+					<label>მონიტორის ზომა: </label>
+					<section class="checkboxes active" id="c1" onclick="website.checkboxCheck('c1')">
+						<section class="b"><i class="fa fa-check" aria-hidden="true"></i></section>
+						<section class="t">17 დიუმი</section>
+					</section>
+					<section class="checkboxes" id="c2" onclick="website.checkboxCheck('c2')">
+						<section class="b"><i class="fa fa-check" aria-hidden="true"></i></section>
+						<section class="t">18 დიუმი</section>
+					</section>
+					<section class="buttons">
+
+						<a href="<?=$c::WEBSITE?>map?search=as" class="button" target="_blank">
+							<i class="fa fa-map-marker" aria-hidden="true"></i> ძებნა
+						</a>						
+					</section>
+				</form>
+	</section>
+
+</section>
 <script type="text/javascript">
 var marker_points = [
 	[
