@@ -113,6 +113,7 @@ var website = {
 	        google.maps.event.addListener(marker, 'click', (function(marker, i) {
 	            return function() {
 	                infoWindow.close();
+	                website.showSearch("close");
 	                infoWindow.setContent(marker_points[i][2]);
 	                infoWindow.open(map, marker);
 	            }
@@ -122,6 +123,7 @@ var website = {
 
 		google.maps.event.addListener(map, 'click', function() {
 		    	infoWindow.close();
+		    	website.showSearch("close");
 		});
 
 		google.maps.event.addListener(infoWindow, 'domready', function() {

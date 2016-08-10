@@ -4,6 +4,9 @@
 	<section class="map-search-icon" onclick="website.showSearch('open')"><i class="fa fa-search" aria-hidden="true"></i></section>
 	<section class="map-search-content">
 		<form action="" method="get">
+				<a href="<?=$c::WEBSITE?>" class="header-logo">
+					<section class="logo"><i class="fa fa-barcode" aria-hidden="true"></i></section>
+				</a>
 					<label>კატეგორია: </label>
 					<section class="select-box" id="icat1">
 					<div class="selected">

@@ -242,13 +242,15 @@ main .product-list .catproduct .content .readmore:hover{ background-color: #e573
 .mobile-detected{ display: none; text-align: center; line-height:100%; margin: 0; padding: 50px 0 0 0; width: 100%; height: 100%; position: absolute; z-index: 100000; background-color: #e57373; color: white; }
 .mobile-detected a{ color: white; }
 #map{ width: 100%; margin: 0; padding: 0; }
-#map-search{ margin: 0; padding: 0; width: 320px; position: absolute; top:0; right: -270px; z-index: 100000; }
-#map-search .map-search-icon{ margin:0; padding:0; width: 50px; background: #e57373; float: left; line-height: 50px; text-align: center; cursor: pointer; color: white }
+#map-search{ margin: 0; padding: 0; width: 270px; position: absolute; top:0; right: -270px; z-index: 100000; }
+#map-search .map-search-icon{ margin:0; padding:0; width: 50px; height:50px; background: #e57373; line-height: 50px; text-align: center; cursor: pointer; color: white; position: absolute;top: 0; left: -50px; }
 #map-search .map-search-icon i{ font-size: 18px; }
-#map-search .map-search-content{ margin:0; padding:0; width: calc(100% - 50px); background: #ffffff; opacity: 0.9;  box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6); float: right; }
+#map-search .map-search-content{ margin:0; padding:0; width: 100%; background: #ffffff; opacity: 0.9;  box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6); float: right; }
 
 
 /* ////////////////////////////// */
+#map-search .map-search-content form .header-logo{ margin: 0 0 10px 0; padding: 10px; width: calc(100% - 20px); height: 30px; float: left; background-color: #3c3241; }
+#map-search .map-search-content form .header-logo section i{ margin: 0; padding: 0; line-height: 30px; text-decoration: none; font-size: 25px; color: #e57373; }
 #map-search .map-search-content form{ margin: 0; padding: 0; float: left; clear: both; }
 #map-search .map-search-content form label{ width: calc(100% - 20px); float: left; padding: 0 10px; line-height: 25px; color: #555555; }
 #map-search .map-search-content form input[type="text"]{ margin: 0 10px 10px 10px; float: left; width: calc(100% - 42px); padding: 0 10px; line-height: 35px; border: solid 1px #f2f2f2; }
