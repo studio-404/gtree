@@ -6,9 +6,11 @@ class main{
 	const DIR = "/home/geoweb/public_html/";
 	const LANG = "/home/geoweb/public_html/lang/ge.json";
 	const PUBLIC_FOLDER_NAME = "public";
+	const CACHE = "/home/geoweb/public_html/public/cache/";
 	const CHARSET = "utf-8";
 	const WEBSITE = "http://404.ge/";
 	const PUBLIC_FOLDER = "http://404.ge/public/";
+	const IMG = "http://img.404.ge/";
 	const AUTHER = "Giorgi Gvazava";
 	const NAME = "Gum Tree";
 	const DESC = "Gum Tree";

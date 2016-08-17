@@ -6,19 +6,18 @@ use lib\database\connection as connection;
 use lib\functions\url as url;
 use lib\template as temp;
 use lib\functions\lang as lang;
+use lib\functions\cache as cache; 
 
 class page{
 	public $head;
 	public $footer;
 	public $conn;
-	public $page;
+	public $pages;
 
 	function __construct(){
 		$this->connection = new connection();
-		$this->conn = $this->connection->conn();
-		
-		$this->request = new url\request();
-		
+		$this->conn = $this->connection->conn();		
+		$this->request = new url\request();		
 		$this->currentSlug = new url\slug();
 		$this->params = $this->currentSlug->params();
 		
@@ -47,27 +46,10 @@ class page{
 		$c = new c();		
 		$this->slug = new url\slug();
 		$this->params = $this->slug->params();
-		$lang = new lang\l();	
+		$lang = new lang\l();
 		$header = new temp\header();	
 		$footer = new temp\footer();
-
-		#######################################################
-		// domain.com/ge/home 
-
-		// domain.com/ge/login #registration & auth 
-		
-		// domain.com/ge/category/auto/accessories
-		// domain.com/ge/view/51515454/project-title
-
-		// domain.com/ge/profile/view/4561655365
-		// domain.com/ge/profile/4561655365/manageAds
-		// domain.com/ge/profile/4561655365/messages
-		// domain.com/ge/profile/4561655365/favourites
-		// domain.com/ge/profile/4561655365/savedsearches
-		
-		// domain.com/ge/search/search-key-text
-		// domain.com/ge/map
-		#######################################################
+		$cache = new cache\modules();
 
 		if(empty($this->params[0])){ $this->params[0] = "home";	}
 

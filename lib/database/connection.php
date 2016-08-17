@@ -8,6 +8,7 @@ class connection{
 	public $HANDLER;
 
 	public function conn(){
+
 		try{
 			$host = sprintf(
 				'mysql:host=%s;dbname=%s;charset=utf8',

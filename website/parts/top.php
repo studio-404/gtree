@@ -76,12 +76,11 @@
 				<li class="home">
 					<a href="<?=$c::WEBSITE?>" <?=(!isset($this->params[0]) || $this->params[0]=="home") ? "class=\"active\"" : ""?> data-title="<?=$lang->index("home")?>"><i class="fa fa-home" aria-hidden="true"></i></a>
 				</li>
-				<li>
-					<a href="<?=$c::WEBSITE?>login" <?=(isset($this->params[0]) && $this->params[0]=="login") ? "class=\"active\"" : ""?>><?=$lang->index("login")?></a>
-				</li>
-				<li>
-					<a href="<?=$c::WEBSITE?>profile" <?=(isset($this->params[0]) && $this->params[0]=="profile") ? "class=\"active\"" : ""?>><?=$lang->index("mypage")?></a>
-				</li>
+				
+
+				<?=$cache->index("topMenu")?>
+				
+				
 				<li>
 					<a href="javascript:void(0)" <?=(isset($this->params[0]) && $this->params[0]=="addpost") ? "class=\"active\"" : ""?> onclick="website.popup('open')"><?=$lang->index("addpost")?></a>
 				</li>

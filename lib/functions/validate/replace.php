@@ -13,6 +13,9 @@ class replace{
 		if($arg["removeLastWhitespace"]=="true"){
 			$out = self::removeLastWhitespace($out);
 		}
+		if($arg["removeAllTags"]=="true"){
+			$out = self::removeAllTags($out);
+		}
 		return $out;
 	}
 
@@ -28,6 +31,11 @@ class replace{
 
 	public static function removeLastWhitespace($str){
 		$out = trim($str, " ");
+		return $out;
+	}
+
+	public static function removeAllTags($str){
+		$out = strip_tags($str);
 		return $out;
 	}
 	

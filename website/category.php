@@ -6,21 +6,9 @@
 <main>
 		<section class="filter">
 			<section class="box">
-				<h2><i class="fa fa-list" aria-hidden="true"></i> კატეგორია</h2>
-				<p class="chosen">
-					<a href="">ავტო</a>
-				</p>
-				<p class="chosen">
-					<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-					<a href="">მერსედესი</a>
-				</p>
-				<nav class="sub-category">
-					<ul>
-						<li><a href="">ალფა რომეო</a></li>
-						<li><a href="">BMW</a></li>
-						<li><a href="">მერსედესი</a></li>
-					</ul>
-				</nav>
+				<h2><i class="fa fa-list" aria-hidden="true"></i> <?=$lang->index("category")?></h2>
+				<?=$cache->index("currentSlugTitle")?>
+				<?=$cache->index("subNavCat")?>				
 			</section>
 
 			<section class="box">
